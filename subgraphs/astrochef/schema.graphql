@@ -1,0 +1,45 @@
+# Factory
+type Factory @entity {
+  id: ID!
+
+  "Total of AstroChef contracts"
+  totalAstroChef: BigInt!
+}
+
+# AstroChef
+type AstroChef @entity {
+  id: ID!
+
+  "Token"
+  stakeToken: Token!
+  "Token"
+  earnToken: Token!
+
+  "Start block number"
+  startBlock: BigInt!
+  "End block number"
+  endBlock: BigInt!
+
+  "Reward per block (in earnToken)"
+  reward: BigDecimal!
+
+  "Limit (if any, in stakeToken)"
+  limit: BigDecimal
+
+  "Block number"
+  block: BigInt!
+  "Block timestamp"
+  timestamp: BigInt!
+}
+
+# Token
+type Token @entity {
+  id: ID!
+
+  "Name"
+  name: String!
+  "Symbol"
+  symbol: String!
+  "Decimals"
+  decimals: BigInt!
+}
